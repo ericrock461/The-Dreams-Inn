@@ -93,6 +93,7 @@
             this.Controls.Add(this.redLabel);
             this.Name = "Form1";
             this.Text = "The Dreams Inn";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 
