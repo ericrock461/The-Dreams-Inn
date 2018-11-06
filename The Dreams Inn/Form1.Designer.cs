@@ -38,13 +38,16 @@
             this.rButton = new System.Windows.Forms.Label();
             this.bButton = new System.Windows.Forms.Label();
             this.gButton = new System.Windows.Forms.Label();
+            this.reel1 = new System.Windows.Forms.Label();
+            this.reel2 = new System.Windows.Forms.Label();
+            this.reel3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // redLabel
             // 
             this.redLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.redLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.redLabel.Location = new System.Drawing.Point(400, 235);
+            this.redLabel.Location = new System.Drawing.Point(396, 235);
             this.redLabel.Name = "redLabel";
             this.redLabel.Size = new System.Drawing.Size(192, 41);
             this.redLabel.TabIndex = 0;
@@ -105,7 +108,6 @@
             this.yButton.Name = "yButton";
             this.yButton.Size = new System.Drawing.Size(42, 41);
             this.yButton.TabIndex = 6;
-            this.yButton.Text = "N";
             this.yButton.Click += new System.EventHandler(this.yButton_Click);
             // 
             // rButton
@@ -115,7 +117,6 @@
             this.rButton.Name = "rButton";
             this.rButton.Size = new System.Drawing.Size(41, 41);
             this.rButton.TabIndex = 7;
-            this.rButton.Text = "M";
             // 
             // bButton
             // 
@@ -124,7 +125,6 @@
             this.bButton.Name = "bButton";
             this.bButton.Size = new System.Drawing.Size(42, 41);
             this.bButton.TabIndex = 8;
-            this.bButton.Text = "B";
             // 
             // gButton
             // 
@@ -133,13 +133,45 @@
             this.gButton.Name = "gButton";
             this.gButton.Size = new System.Drawing.Size(41, 41);
             this.gButton.TabIndex = 9;
-            this.gButton.Text = "Space";
+            // 
+            // reel1
+            // 
+            this.reel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reel1.Location = new System.Drawing.Point(119, 61);
+            this.reel1.Name = "reel1";
+            this.reel1.Size = new System.Drawing.Size(100, 64);
+            this.reel1.TabIndex = 10;
+            this.reel1.Text = "seven";
+            this.reel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // reel2
+            // 
+            this.reel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reel2.Location = new System.Drawing.Point(284, 61);
+            this.reel2.Name = "reel2";
+            this.reel2.Size = new System.Drawing.Size(100, 62);
+            this.reel2.TabIndex = 11;
+            this.reel2.Text = "cherry";
+            this.reel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // reel3
+            // 
+            this.reel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reel3.Location = new System.Drawing.Point(457, 61);
+            this.reel3.Name = "reel3";
+            this.reel3.Size = new System.Drawing.Size(100, 64);
+            this.reel3.TabIndex = 12;
+            this.reel3.Text = "cherry";
+            this.reel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 477);
+            this.Controls.Add(this.reel3);
+            this.Controls.Add(this.reel2);
+            this.Controls.Add(this.reel1);
             this.Controls.Add(this.gButton);
             this.Controls.Add(this.rButton);
             this.Controls.Add(this.greenLabel);
@@ -169,6 +201,9 @@
         private System.Windows.Forms.Label rButton;
         private System.Windows.Forms.Label bButton;
         private System.Windows.Forms.Label gButton;
+        private System.Windows.Forms.Label reel1;
+        private System.Windows.Forms.Label reel2;
+        private System.Windows.Forms.Label reel3;
     }
 }
 

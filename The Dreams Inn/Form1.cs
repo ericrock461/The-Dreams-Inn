@@ -15,22 +15,25 @@ namespace The_Dreams_Inn
     {
         // tracks what part of the game the user is at
         int scene = 0;
-
-        // random number generator
+        Random randGen = new Random();
+        bool slots = false;
 
         public Form1()
         {
             InitializeComponent();
 
             //display initial message and options
-            outputLabel.Text = "Press any button to start \n\n" +
-                "(When there are no options, press Green to advance)";
+            outputLabel.Text = "Press the Green Button to Start";
             outputImageLabel.Text = "My stay at the Dreams Inn";
 
             yellowLabel.Visible = false;
             redLabel.Visible = false;
             blueLabel.Visible = false;
             greenLabel.Visible = false;
+
+            reel1.Visible = false;
+            reel2.Visible = false;
+            reel3.Visible = false;
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -129,7 +132,7 @@ namespace The_Dreams_Inn
                 }
                 else if (scene == 8)
                 {
-                    scene = 9;
+                    scene = 16;
                 }
                 else if (scene == 9)
                 {
@@ -151,6 +154,34 @@ namespace The_Dreams_Inn
                 {
                     scene = 4;
                 }
+                else if (scene == 17 && slots == true)
+                {
+                    scene = 18;
+                }
+                else if (scene == 18)
+                {
+                    scene = 4;
+                }
+                else if (scene == 17 && slots == false)
+                {
+                    scene = 19;
+                }
+                else if (scene == 19)
+                {
+                    scene = 20;
+                }
+                else if (scene == 21)
+                {
+                    scene = 22;
+                }
+                else if (scene == 22)
+                {
+                    scene = 16;
+                }
+                else if (scene == 23)
+                {
+                    scene = 16;
+                }
             }
 
             /// Display text and game options to screen based on the current scene
@@ -161,9 +192,9 @@ namespace The_Dreams_Inn
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
                     greenLabel.Visible = false;
+                    slots = false;
 
-                    outputLabel.Text = "Press any Button to Start\n\n" +
-                        "(When there are no options, press Green to advance)";
+                    outputLabel.Text = "Press the Green Button to Start";
                     outputImageLabel.Text = "My stay at the Dreams Inn";
                     yellowLabel.Text = "";
                     redLabel.Text = "";
@@ -191,7 +222,8 @@ namespace The_Dreams_Inn
                     yellowLabel.Visible = false;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
-                    greenLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
                 case 3:
                     outputLabel.Text = "*You go to to front desk and check in*\n\n" +
@@ -200,7 +232,8 @@ namespace The_Dreams_Inn
                     yellowLabel.Visible = false;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
-                    greenLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
                 case 4:
                     outputLabel.Text = "Restart?";
@@ -228,31 +261,37 @@ namespace The_Dreams_Inn
                     yellowLabel.Visible = false;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
-                    greenLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
                 case 7:
                     outputLabel.Text = " *You go to to front desk and check in*\n\n" +
-                        "'Aaand done! Oh, by the way, please don't look at the News. Thanks'";
+                        "'Aaand done! Your room is up two floors.\n" +
+                        "By the way, please don't look at the News. Thanks'";
                     yellowLabel.Visible = false;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
-                    greenLabel.Visible = false;                  
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
                 case 8:
-                    outputLabel.Text = "*You rethought for a moment, and decided you should\n" +
-                        "look at the News, just in case...*";
+                    outputLabel.Text = "*You are feeling so self-righteous that you didn't realize the floors had\n" +
+                        "just been mopped, and you slip down the stairs and die.*";
                     yellowLabel.Visible = false;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
-                    greenLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
-                case 9:                   
-                    outputImageLabel.Text = "Crazy gang thing!";
+                case 9:
+                    outputImageLabel.Text = "Crazy gang reported to be attacking hotels all across the province!\n" +
+                        "Until they are caught it is advised to avoid staying at any hotel.";
                     outputLabel.Text = "";
                     yellowLabel.Visible = false;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
-                    greenLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
                 case 10:
                     outputLabel.Text = "Uh oh, that sounds pretty bad, what should I do?";
@@ -282,9 +321,10 @@ namespace The_Dreams_Inn
                     outputLabel.Text = "*You hear a voice from behind you*\n" +
                         "'Where do ya fink you're goin'? Cuz ya comin' wif us!!'";
                     yellowLabel.Visible = false;
-                    greenLabel.Visible = false;
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
                 case 13:
                     outputLabel.Text = "";
@@ -302,7 +342,7 @@ namespace The_Dreams_Inn
                 case 14:
                     outputImageLabel.BackColor = Color.White;
                     //outputImageLabelLabel.Image = 
-                    outputLabel.Text = "'Ok, so what we're gonna do, right? Is you play this here \n" +
+                    outputLabel.Text = "'Ok, so what we're gonna do, is you play this here \n" +
                         "slot machine, okay? If you win, I'll let you go. \n" +
                          "Got it? Great.'";             
                     outputImageLabel.Text = "";
@@ -313,6 +353,10 @@ namespace The_Dreams_Inn
 
                     redLabel.Text = "Hecc No!";
                     blueLabel.Text = "...Ok...";
+
+                    reel1.Visible = true;
+                    reel2.Visible = true;
+                    reel3.Visible = true;                 
                     break;
                 case 15:
                     outputLabel.Text = "'Alright, fair enuff then.'";
@@ -320,7 +364,8 @@ namespace The_Dreams_Inn
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
                     yellowLabel.Visible = false;
-                    greenLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
                 case 16:
                     outputLabel.Text = "";
@@ -328,7 +373,8 @@ namespace The_Dreams_Inn
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
                     yellowLabel.Visible = false;
-                    greenLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
                     break;
                 case 17:
                     outputLabel.Text = "";
@@ -337,26 +383,151 @@ namespace The_Dreams_Inn
                     blueLabel.Visible = false;
                     yellowLabel.Visible = false;
                     greenLabel.Visible = false;
+
+
+                    reel1.Visible = true;
+                    reel2.Visible = true;
+                    reel3.Visible = true;
+                  
+                    int reel1Value = randGen.Next(1, 4);                 
+                    int reel2Value = randGen.Next(1, 4);                  
+                    int reel3Value = randGen.Next(1, 4);
+
+                    switch (reel1Value)
+                    {
+                        case 1:
+                            Thread.Sleep(1000);
+                            reel1.Refresh();
+                            reel1.Text = "seven"; //Image = Properties.Resources._7_100x125;
+                            break;
+                        default:
+                            Thread.Sleep(1000);
+                            reel1.Refresh();
+                            reel1.Text = "cherry"; //Image = Properties.Resources.diamond_100x125;
+                            break;
+                    }
+                    switch (reel2Value)
+                    {
+                        case 1:
+                            Thread.Sleep(2000);
+                            reel2.Refresh();
+                            reel2.Text = "seven"; //Image = Properties.Resources._7_100x125;
+                            break;
+                        default:
+                            Thread.Sleep(2000);
+                            reel2.Refresh();
+                            reel2.Text = "cherry"; //Image = Properties.Resources.diamond_100x125;
+                            break;
+                    }
+                    switch (reel3Value)
+                    {
+                        case 1:
+                            Thread.Sleep(4000);
+                            reel3.Refresh();
+                            reel3.Text = "seven";//Image = Properties.Resources._7_100x125;
+                            break;
+                        default:
+                            Thread.Sleep(4000);
+                            reel3.Refresh();
+                            reel3.Text = "cherry"; //Image = Properties.Resources.diamond_100x125;
+                            break;
+                    }
+
+                    if (reel1Value == reel2Value && reel2Value == reel3Value)
+                    {
+                        outputLabel.Text = "Huh. Well, I guess you're free, then. Hallway's to the left.\n" +
+                            "UNFINISHED";
+                        slots = true;
+                        greenLabel.Visible = true;
+                        greenLabel.Text = "Continue";
+                    }
+                    else
+                    {
+                        outputLabel.Text = "So, you didn't win. Boss said if you didn't win\n" +
+                            "I should escort you to your room.";
+                        greenLabel.Visible = true;
+                        greenLabel.Text = "Continue";
+                    }
                     break;
                 case 18:
-                    outputLabel.Text = "";
-                    outputImageLabel.Text = "Game Over";
+                    outputLabel.Text = "You Won 'The Lucky Way'";
+                    outputImageLabel.Text = "";
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
                     yellowLabel.Visible = false;
-                    greenLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
+
+                    reel1.Visible = false;
+                    reel2.Visible = false;
+                    reel3.Visible = false;
                     break;
                 case 19:
+                    outputLabel.Text = "Now I've got you...";                     
+                        //"I don't really know what I should do here...";
+                    outputImageLabel.Text = "Hallway Scene";
+                    redLabel.Visible = false;
+                    blueLabel.Visible = false;
+                    yellowLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
+
+                    reel1.Visible = false;
+                    reel2.Visible = false;
+                    reel3.Visible = false;
+                    break;
+                case 20:
+                    outputLabel.Text = "Mob Boss would like to battle!\n\n" +
+                        "What will you do?";
+                    outputImageLabel.Text = "";
+                    redLabel.Visible = true;
+                    blueLabel.Visible = true;
+                    yellowLabel.Visible = false;
+                    greenLabel.Visible = false;
+
+                    yellowLabel.Text = "Fight";
+                    blueLabel.Text = "Flee";
+                    redLabel.Text = "Key Card";
+                    break;
+                case 21:
+                    outputLabel.Text = "*You throw your hotel key card at Mob Boss!\n" +
+                        "*You hit him right in the eye!*\n\n" +
+                        "Mob Boss: 'ARRRGGGGGG!!!!'";
+                    outputImageLabel.Text = "";
+                    redLabel.Visible = false;
+                    blueLabel.Visible = false;
+                    yellowLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
+                    break;
+                case 22:
+                    outputLabel.Text = "Mob Boss: HERE I COOOOOMEEEE!!!!!";
+                    outputImageLabel.Text = "Can't flee this fight!";
+                    redLabel.Visible = false;
+                    blueLabel.Visible = false;
+                    yellowLabel.Visible = false;
+                    greenLabel.Visible = true;
+                    greenLabel.Text = "Continue";
+                    break;
+                case 23:
                     outputLabel.Text = "";
-                    outputImageLabel.Text = "Game Over";
+                    outputImageLabel.Text = "";
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
                     yellowLabel.Visible = false;
                     greenLabel.Visible = false;
                     break;
-                case 20:
+                case 24:
                     outputLabel.Text = "";
-                    outputImageLabel.Text = "Game Over";
+                    outputImageLabel.Text = "";
+                    redLabel.Visible = false;
+                    blueLabel.Visible = false;
+                    yellowLabel.Visible = false;
+                    greenLabel.Visible = false;
+                    break;
+                case 25:
+                    outputLabel.Text = "";
+                    outputImageLabel.Text = "";
                     redLabel.Visible = false;
                     blueLabel.Visible = false;
                     yellowLabel.Visible = false;
@@ -383,54 +554,3 @@ namespace The_Dreams_Inn
         }
     }
 }
-/*private void spinButton_Click(object sender, EventArgs e)
-{
-    reel1Value = randGen.Next(1, 4);
-    reel2Value = randGen.Next(1, 4);
-    reel3Value = randGen.Next(1, 4);
-
-    switch (reel1Value)
-    {
-        case 1:
-            reel1.Image = Properties.Resources._7_100x125;
-            break;
-        case 2:
-            reel1.Image = Properties.Resources.cherry_100x125;
-            break;
-        default:
-            reel1.Image = Properties.Resources.diamond_100x125;
-            break;
-    }
-    switch (reel2Value)
-    {
-        case 1:
-            reel2.Image = Properties.Resources._7_100x125;
-            break;
-        case 2:
-            reel2.Image = Properties.Resources.cherry_100x125;
-            break;
-        default:
-            reel2.Image = Properties.Resources.diamond_100x125;
-            break;
-    }
-    switch (reel3Value)
-    {
-        case 1:
-            reel3.Image = Properties.Resources._7_100x125;
-            break;
-        case 2:
-            reel3.Image = Properties.Resources.cherry_100x125;
-            break;
-        default:
-            reel3.Image = Properties.Resources.diamond_100x125;
-            break;
-    }
-
-    if (reel1Value == reel2Value && reel2Value == reel3Value) //&& reel1 == reel3??
-    {
-        score = score + 5;
-        scoreDisplay.Text = Convert.ToString(score);
-        outputLabel.Text = "Winner!";
-    }   
-}
-*/
