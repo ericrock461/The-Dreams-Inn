@@ -59,5 +59,15 @@ namespace The_Dreams_Inn.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dream_hollywood_exterior {
+            get {
+                object obj = ResourceManager.GetObject("dream_hollywood_exterior", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

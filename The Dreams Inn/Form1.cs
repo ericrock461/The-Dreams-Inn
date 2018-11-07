@@ -229,6 +229,7 @@ namespace The_Dreams_Inn
                     blueLabel.Visible = false;
                     greenLabel.Visible = false;
                     slots = false;
+                    outputImageLabel.Image = Properties.Resources.dream_hollywood_exterior
 
                     outputLabel.Text = "Press the Green Button to Start";
                     outputImageLabel.Text = "My stay at the Dreams Inn";
