@@ -55,6 +55,7 @@
             // 
             // greenLabel
             // 
+            this.greenLabel.BackColor = System.Drawing.Color.PaleGreen;
             this.greenLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.greenLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.greenLabel.Location = new System.Drawing.Point(224, 287);
@@ -93,6 +94,7 @@
             // 
             // outputImageLabel
             // 
+            this.outputImageLabel.BackColor = System.Drawing.Color.Gainsboro;
             this.outputImageLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.outputImageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputImageLabel.Location = new System.Drawing.Point(57, 9);
