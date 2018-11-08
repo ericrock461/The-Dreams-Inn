@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.redLabel = new System.Windows.Forms.Label();
             this.greenLabel = new System.Windows.Forms.Label();
             this.yellowLabel = new System.Windows.Forms.Label();
             this.outputLabel = new System.Windows.Forms.Label();
             this.blueLabel = new System.Windows.Forms.Label();
-            this.outputImageLabel = new System.Windows.Forms.Label();
             this.yButton = new System.Windows.Forms.Label();
             this.rButton = new System.Windows.Forms.Label();
             this.bButton = new System.Windows.Forms.Label();
@@ -41,6 +41,10 @@
             this.reel1 = new System.Windows.Forms.Label();
             this.reel2 = new System.Windows.Forms.Label();
             this.reel3 = new System.Windows.Forms.Label();
+            this.textLabel = new System.Windows.Forms.Label();
+            this.extraTextLabel = new System.Windows.Forms.Label();
+            this.outputImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.outputImage)).BeginInit();
             this.SuspendLayout();
             // 
             // redLabel
@@ -91,17 +95,6 @@
             this.blueLabel.Name = "blueLabel";
             this.blueLabel.Size = new System.Drawing.Size(180, 41);
             this.blueLabel.TabIndex = 4;
-            // 
-            // outputImageLabel
-            // 
-            this.outputImageLabel.BackColor = System.Drawing.Color.Gainsboro;
-            this.outputImageLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.outputImageLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.outputImageLabel.Location = new System.Drawing.Point(57, 9);
-            this.outputImageLabel.Name = "outputImageLabel";
-            this.outputImageLabel.Size = new System.Drawing.Size(559, 329);
-            this.outputImageLabel.TabIndex = 5;
-            this.outputImageLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // yButton
             // 
@@ -166,11 +159,46 @@
             this.reel3.Text = "cherry";
             this.reel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textLabel
+            // 
+            this.textLabel.AutoSize = true;
+            this.textLabel.BackColor = System.Drawing.Color.Aquamarine;
+            this.textLabel.Font = new System.Drawing.Font("Pristina", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textLabel.Location = new System.Drawing.Point(73, 26);
+            this.textLabel.Name = "textLabel";
+            this.textLabel.Size = new System.Drawing.Size(260, 35);
+            this.textLabel.TabIndex = 14;
+            this.textLabel.Text = "My stay at the Dreams Inn";
+            // 
+            // extraTextLabel
+            // 
+            this.extraTextLabel.BackColor = System.Drawing.Color.MidnightBlue;
+            this.extraTextLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.extraTextLabel.ForeColor = System.Drawing.Color.White;
+            this.extraTextLabel.Location = new System.Drawing.Point(88, 26);
+            this.extraTextLabel.Name = "extraTextLabel";
+            this.extraTextLabel.Size = new System.Drawing.Size(500, 188);
+            this.extraTextLabel.TabIndex = 15;
+            this.extraTextLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // outputImage
+            // 
+            this.outputImage.BackColor = System.Drawing.Color.White;
+            this.outputImage.BackgroundImage = global::The_Dreams_Inn.Properties.Resources.dream_hollywood_exterior;
+            this.outputImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.outputImage.Location = new System.Drawing.Point(69, 12);
+            this.outputImage.Name = "outputImage";
+            this.outputImage.Size = new System.Drawing.Size(535, 326);
+            this.outputImage.TabIndex = 13;
+            this.outputImage.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(672, 477);
+            this.Controls.Add(this.extraTextLabel);
+            this.Controls.Add(this.textLabel);
             this.Controls.Add(this.reel3);
             this.Controls.Add(this.reel2);
             this.Controls.Add(this.reel1);
@@ -182,12 +210,15 @@
             this.Controls.Add(this.yellowLabel);
             this.Controls.Add(this.bButton);
             this.Controls.Add(this.yButton);
-            this.Controls.Add(this.outputImageLabel);
             this.Controls.Add(this.outputLabel);
+            this.Controls.Add(this.outputImage);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "The Dreams Inn";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.outputImage)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -198,7 +229,6 @@
         private System.Windows.Forms.Label yellowLabel;
         private System.Windows.Forms.Label outputLabel;
         private System.Windows.Forms.Label blueLabel;
-        private System.Windows.Forms.Label outputImageLabel;
         private System.Windows.Forms.Label yButton;
         private System.Windows.Forms.Label rButton;
         private System.Windows.Forms.Label bButton;
@@ -206,6 +236,9 @@
         private System.Windows.Forms.Label reel1;
         private System.Windows.Forms.Label reel2;
         private System.Windows.Forms.Label reel3;
+        private System.Windows.Forms.PictureBox outputImage;
+        private System.Windows.Forms.Label textLabel;
+        private System.Windows.Forms.Label extraTextLabel;
     }
 }
 

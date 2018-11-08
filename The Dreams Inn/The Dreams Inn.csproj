@@ -88,5 +88,17 @@
   <ItemGroup>
     <None Include="Resources\dream-hollywood-exterior.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotelCheck.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stairs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\news.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hotelHallway.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
